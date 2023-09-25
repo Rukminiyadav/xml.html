@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //XHTMLHTTPREQUEST:
+
+        var request=new XMLHttpRequest()
+        console.log(request)
+
+        //open a connection
+        request.open('GEThttps://restcountries.com/v3.1/all',)
+
+        //sending an connection
+        request.send()
+
+        //event and function
+        //onload event=>page load
+
+        request.onload= function(){
+            console.log("page Loaded")
+            //console.log(request.response)
+            //string=> object
+            var data=JSON.parse(request.response)
+            console.log(data)
+
+            //console.log(data[0].area)
+
+            //for loop
+            for(var i=0;i<data.length;i++){
+                //console.log(data[i])
+                //console.log(data[i].region,data[i].area) 
+            }
+
+            for(var obj of data){
+                console.log(obj.area)
+            }
+
+            for(var index in data){
+                console.log(data[index].area)
+            }
+        }
+         
+    
+    </script>
+</body>
+</html>
